@@ -126,8 +126,13 @@ Notes:
         <%= link_to "Show", photo_path(zebra.id) %>
         <%= link_to "Show", photo_path(zebra) %>
         <%= link_to "Show", zebra %>
+
         # Assuming that zebra is an ActiveRecord object, and
         #   that routes are RESTful and named conventionally.
+
+    The last shortcut, where we supply an ActiveRecord object as the second argument instead of an actual URL, only works if you are trying to create a link to the show page of a row. For any other URL, you have to used the second-to-last shortcut, e.g.,
+
+        <%= link_to "Edit", edit_photo_path(photo) %>
 
 ## Part 12: Destroy
 
