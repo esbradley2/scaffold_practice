@@ -123,8 +123,8 @@ Notes:
 
         <a href="/photos/1">Show</a>
         <%= link_to "Show", /photos/1" %>
-        <%= link_to "Show", photo_url(zebra.id) %>
-        <%= link_to "Show", photo_url(zebra) %>
+        <%= link_to "Show", photo_path(zebra.id) %>
+        <%= link_to "Show", photo_path(zebra) %>
         <%= link_to "Show", zebra %>
         # Assuming that zebra is an ActiveRecord object, and
         #   that routes are RESTful and named conventionally.
