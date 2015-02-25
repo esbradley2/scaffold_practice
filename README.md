@@ -118,7 +118,7 @@ On the index page, add a link to the new form at the top.
 Notes:
 
  1. Use `link_to` helper methods, not raw `<a>` tags.
- 1. The delete links will need to use the HTTP verb `"delete"` in order to trigger the `destroy` action RESTfully.
+ 1. The delete links will need to use the HTTP method `"delete"` in order to trigger the `destroy` action RESTfully.
  1. You can use some extreme shortcuts with `link_to`. Study the following evolution of conciseness; each line produces roughly the same source code.
 
         <a href="/photos/1">Show</a>
