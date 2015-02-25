@@ -47,4 +47,22 @@ photo_info = [
 
 # Write some Ruby here to use the photo_info array I created above to create seven rows in the photos table.
 
+
+photo_info.each do |photo_hash|
+  p = Photo.new
+  p.caption = photo_hash[:caption]
+  p.source = photo_hash[:source]
+  p.save
+end
+
+photo_info.each do |photo_hash|
+  Photo.create({ :caption => photo_hash[:caption], :source => photo_hash[:source] })
+end
+
+photo_info.each do |photo_hash|
+  Photo.create(photo_hash)
+end
+
 # Read the instructional comments at the very top of the file for hints on how to do it very concisely.
+
+Photo.create(photo_info)
