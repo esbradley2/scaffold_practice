@@ -62,20 +62,49 @@ e.g.,
 
     <%= f.text_field :source %>
 
+You can also quickly create a matching label for each `<input>`:
+
+    <%= f.label :source %>
+
 Finally, there's a helper for the submit button, too:
 
     <%= f.submit %>
 
+In Chrome, **view source** and study the code that these helper methods are writing for you. How is it different from what `form_tag` writes?
+
 ## Part 7: Create action
 
-When you click the submit button on the new form, `form_for` is smart enough to guess that the action should be to `POST` to `photos_url`, since that is the RESTful convention.
+When you click the submit button on the new form, `form_for` is smart enough to guess that the action should be to `POST` to `/photos`, since that is the RESTful convention.
 
 Implement the `create` action to use the form data to add a row to the photos table.
 
 Two new things:
 
- 1. `form_for` wraps up all the photo-related form inputs into a subhash, and nests it under the `params[:photo]` key.
- 1. You need to whitelist the parameters that we accept from the internet like so:
+ 1. `form_for` wraps up all the photo-related form inputs into a subhash, and nests it under the `params[:photo]` key. Check out your server log to see this in action.
+ 1. You need to whitelist the parameters that we accept from the internet before mass-assigning them, like so:
 
         params.require(:photo).permit(:caption, :source)
+
+## Part 8: Edit form
+
+I want to be able to visit [http://localhost:3000/photos/1/edit](http://localhost:3000/photos/1/edit), etc, and see a form to edit an existing photo.
+
+Use the `form_for` helper method rather than the `form_tag` helper that we are used to.
+
+## Part 9: Update action
+
+When you click the submit button on the edit form, `form_for` is smart enough to guess that the action should be to `PATCH` to `/photos/1`, etc, since that is the RESTful convention.
+
+Implement the `update` action to use the form data to update the row in the photos table.
+
+## Part 10: DRY up the forms into a partial
+
+Since the new and edit forms are now identical (because we are using `form_for`, which guesses action, HTTP verb, and even button text), we can DRY them up into one place.
+
+If you haven't already, create a partial view template `app/views/photos/_form.html.erb`, and paste in the `form_for` code.
+
+In the new and edit templates, use the partial:
+
+    <%= render 'form' %>
+
 
