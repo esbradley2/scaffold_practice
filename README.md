@@ -123,11 +123,11 @@ Notes:
 
         <a href="/photos/1">Show</a>
         <%= link_to "Show", /photos/1" %>
-        <%= link_to "Show", photo_url(photo.id) %>
-        <%= link_to "Show", photo_url(photo) %>
-        <%= link_to "Show", photo %>
-        # Assuming that photo is an ActiveRecord object, and
-        #   routes are RESTful and named properly
+        <%= link_to "Show", photo_url(zebra.id) %>
+        <%= link_to "Show", photo_url(zebra) %>
+        <%= link_to "Show", zebra %>
+        # Assuming that zebra is an ActiveRecord object, and
+        #   that routes are RESTful and named conventionally.
 
 ## Part 12: Destroy
 
