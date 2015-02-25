@@ -126,3 +126,5 @@ Notes:
         <%= link_to "Show", photo_url(photo.id) %>
         <%= link_to "Show", photo_url(photo) %>
         <%= link_to "Show", photo %>
+        # Assuming that photo is an ActiveRecord object, and
+        #   routes are RESTful and named properly
