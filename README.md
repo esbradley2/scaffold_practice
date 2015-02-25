@@ -54,7 +54,7 @@ Remember, `form_for` looks like this:
 
     <% end %>
 
-and you must draw each `<input>` using helper methods like so:
+and you must draw each `<input>` inside using helper methods like so:
 
     <%= f.[INPUT TYPE] [COLUMN NAME] %>
 
