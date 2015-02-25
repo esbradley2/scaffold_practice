@@ -99,7 +99,7 @@ Implement the `update` action to use the form data to update the row in the phot
 
 ## Part 10: DRY up the forms into a partial
 
-Since the new and edit forms are now identical (because we are using `form_for`, which guesses action, HTTP verb, and even button text), we can DRY them up into one place.
+Since the new and edit forms are now identical (because we are using `form_for`, which guesses the correct action, HTTP verb, and even button text), we can DRY them up into one place.
 
 If you haven't already, create a partial view template `app/views/photos/_form.html.erb`, and paste in the `form_for` code.
 
