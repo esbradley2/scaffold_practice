@@ -132,3 +132,20 @@ Notes:
 ## Part 12: Destroy
 
 Make the delete links work.
+
+## Part 13: Error handling
+
+Add a validation to the Photo class:
+
+    validates :source, :presence => true
+
+Now, if you try to create a photo with no source, it shouldn't save. However, we aren't telling the user why the operation is failing. Let's improve the UX.
+
+In the `create` action, do one of two things:
+
+ - If the photo saves properly, redirect to the index page with the notice "Photo saved successfully". Add the `<%= notice %>` view helper in the application layout file if you haven't already so that this message shows up, if present, at the top of every page.
+ - If the photo doesn't save properly, render the new form again.
+ - At the top of the new form, tell the user what went wrong. Remember that you can access a list of error messages, after a failed `.save`, with `.errors.full_messages`.
+
+Do the same thing for the edit/update flow.
+
