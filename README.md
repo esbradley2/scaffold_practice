@@ -107,4 +107,22 @@ In the new and edit templates, use the partial:
 
     <%= render 'form' %>
 
+## Part 11: Add links
 
+So far, we have no links in this application, which makes navigating it very inconvenient.
+
+For each photo, add a link to show, edit, and delete on both the show and index pages.
+
+On the index page, add a link to the new form at the top.
+
+Notes:
+
+ 1. Use `link_to` helper methods, not raw `<a>` tags.
+ 1. The delete links will need to use the HTTP verb `"delete"` in order to trigger the `destroy` action RESTfully.
+ 1. You can use some extreme shortcuts with `link_to`. Study the following evolution of conciseness; each line produces roughly the same source code.
+
+        <a href="/photos/1">Show</a>
+        <%= link_to "Show", /photos/1" %>
+        <%= link_to "Show", photo_url(photo.id) %>
+        <%= link_to "Show", photo_url(photo) %>
+        <%= link_to "Show", photo %>
