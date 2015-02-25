@@ -145,7 +145,7 @@ In the `create` action, do one of two things:
 
  - If the photo saves properly, redirect to the index page with the notice "Photo saved successfully". Add the `<%= notice %>` view helper in the application layout file if you haven't already so that this message shows up, if present, at the top of every page.
  - If the photo doesn't save properly, render the new form again.
- - At the top of the new form, tell the user what went wrong. Remember that you can access a list of error messages, after a failed `.save`, with `.errors.full_messages`.
+ - At the top of the form, tell the user what went wrong. Remember that you can access a list of error messages, after a failed `.save`, with `.errors.full_messages`.
 
 Do the same thing for the edit/update flow.
 
